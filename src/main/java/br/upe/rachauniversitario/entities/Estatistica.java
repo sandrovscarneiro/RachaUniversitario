@@ -25,4 +25,9 @@ public class Estatistica {
     private Integer cartoes_amarelos;
     @Column(nullable = false)
     private Integer cartoes_vermelhos;
+
+    @OneToOne
+    @JoinColumn(name="id_rodada_jogador", nullable = false)
+    private RodadaJogador rodada_jogador;
+
 }

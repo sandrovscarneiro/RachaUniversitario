@@ -26,5 +26,7 @@ public class Carta {
     @Column(nullable = false)
     private Integer habilidade;
 
-    //Inserir relacionamento One to One com jogador
+    @OneToOne
+    @JoinColumn(name="id_jogador", nullable = false)
+    private Jogador jogador;
 }

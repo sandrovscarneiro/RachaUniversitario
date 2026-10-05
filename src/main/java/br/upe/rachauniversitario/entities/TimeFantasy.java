@@ -23,9 +23,11 @@ public class TimeFantasy {
     @Column(nullable = false)
     private Float pontuacao_total;
 
+    @OneToOne
+    @JoinColumn(name="id_usuario", nullable = false)
+    private Usuario usuario;
     /*
     Inserir relacionamento ManytoOne com Temporada
-    Inserir relacionamento OnetoOne com Usuário
     Inserir relacionamento ManytoOne com Escalacao
     */
 }
