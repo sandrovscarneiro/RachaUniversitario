@@ -1,4 +1,4 @@
-package br.upe.rachauniversitario;
+package br.upe.rachauniversitario.enums;
 
 public enum Perfil {
     ADMINISTRADOR,

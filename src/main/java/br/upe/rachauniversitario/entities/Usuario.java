@@ -1,5 +1,5 @@
 package br.upe.rachauniversitario.entities;
-import br.upe.rachauniversitario.Perfil;
+import br.upe.rachauniversitario.enums.Perfil;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
