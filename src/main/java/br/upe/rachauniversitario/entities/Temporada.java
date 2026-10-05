@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class Temporada {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_temporada;
+    private Integer id_temporada;
     @Column(nullable = false)
     private String nome;
     @Column(nullable = false)

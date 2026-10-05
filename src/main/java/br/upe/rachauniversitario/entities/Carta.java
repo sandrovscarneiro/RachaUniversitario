@@ -14,17 +14,17 @@ import lombok.Setter;
 public class Carta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_carta;
+    private Integer id_carta;
     @Column(nullable = false)
-    private int overall;
+    private Integer overall;
     @Column(nullable = false)
-    private int ataque;
+    private Integer ataque;
     @Column(nullable = false)
-    private int defesa;
+    private Integer defesa;
     @Column(nullable = false)
-    private int forca;
+    private Integer forca;
     @Column(nullable = false)
-    private int habilidade;
+    private Integer habilidade;
 
     //Inserir relacionamento One to One com jogador
 }
