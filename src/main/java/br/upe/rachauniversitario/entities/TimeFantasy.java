@@ -1,14 +1,31 @@
 package br.upe.rachauniversitario.entities;
 
-import java.math.BigDecimal;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.math.BigDecimal;
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class TimeFantasy {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_time;
+    @Column(nullable = false)
     private String nome;
+    @Column(nullable = false)
     private BigDecimal orcamento;
+    @Column(nullable = false)
     private Float pontuacao_total;
 
     /*
-
+    Inserir relacionamento ManytoOne com Temporada
+    Inserir relacionamento OnetoOne com Usuário
+    Inserir relacionamento ManytoOne com Escalacao
     */
 }
