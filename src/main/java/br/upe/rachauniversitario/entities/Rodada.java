@@ -6,23 +6,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Estatistica {
+public class Rodada {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_estatistica;
+    private Integer id_rodada;
     @Column(nullable = false)
-    private Integer gols;
+    private Integer numero;
     @Column(nullable = false)
-    private Integer assistencias;
+    private LocalDateTime data_inicio;
+    private LocalDateTime data_fim;
     @Column(nullable = false)
-    private Integer defesas;
-    @Column(nullable = false)
-    private Integer cartoes_amarelos;
-    @Column(nullable = false)
-    private Integer cartoes_vermelhos;
+    private Boolean rodada_aberta; //Equivale a status
 }
