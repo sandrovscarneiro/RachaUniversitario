@@ -25,5 +25,5 @@ public class Jogador {
     private Posicao posicao;
     private String foto; //URL
     @Column(nullable=false)
-    private String status;
+    private Boolean escalavel; //equivale ao status
 }
