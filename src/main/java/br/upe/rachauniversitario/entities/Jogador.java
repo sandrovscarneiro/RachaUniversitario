@@ -1,6 +1,7 @@
 package br.upe.rachauniversitario.entities;
 
 import br.upe.rachauniversitario.enums.Posicao;
+import br.upe.rachauniversitario.enums.StatusJogador;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,5 +26,6 @@ public class Jogador {
     private Posicao posicao;
     private String foto; //URL
     @Column(nullable=false)
-    private Boolean escalavel; //equivale ao status
+    @Enumerated(EnumType.STRING)
+    private StatusJogador status;
 }
