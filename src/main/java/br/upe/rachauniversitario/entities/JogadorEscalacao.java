@@ -22,4 +22,12 @@ public class JogadorEscalacao {
     private Integer slot;
     @Column(nullable = false)
     private Float pontuacao_obtida;
+
+    @ManyToOne
+    @JoinColumn(name="id_jogador")
+    private Jogador jogador;
+
+    @ManyToOne
+    @JoinColumn(name="id_escalacao")
+    private Escalacao escalacao;
 }
