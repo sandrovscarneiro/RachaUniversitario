@@ -30,4 +30,5 @@ public class Estatistica {
     @JoinColumn(name="id_rodada_jogador", nullable = false)
     private RodadaJogador rodada_jogador;
 
+
 }
