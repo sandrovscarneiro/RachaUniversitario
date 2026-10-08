@@ -21,4 +21,12 @@ public class RodadaJogador {
     private Float pontos;
     @Column(nullable = false)
     private BigDecimal valor_rucoin;
+
+    @ManyToOne
+    @JoinColumn(name="id_rodada")
+    private Rodada rodada;
+
+    @ManyToOne
+    @JoinColumn(name="id_jogador")
+    private Jogador jogador;
 }
