@@ -26,8 +26,10 @@ public class TimeFantasy {
     @OneToOne
     @JoinColumn(name="id_usuario", nullable = false)
     private Usuario usuario;
-    /*
-    Inserir relacionamento ManytoOne com Temporada
-    Inserir relacionamento ManytoOne com Escalacao
-    */
+
+    @ManyToOne
+    @JoinColumn(name="id_temporada")
+    Temporada temporada;
+
+
 }

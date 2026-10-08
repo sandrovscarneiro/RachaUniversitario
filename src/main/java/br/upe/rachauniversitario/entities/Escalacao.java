@@ -21,4 +21,8 @@ public class Escalacao {
     private Float pontuacao;
     @Column(nullable = false)
     private Boolean confirmada;
+
+    @ManyToOne
+    @JoinColumn(name="id_time")
+    TimeFantasy timeFantasy;
 }

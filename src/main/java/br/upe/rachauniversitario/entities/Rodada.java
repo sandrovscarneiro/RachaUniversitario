@@ -24,4 +24,8 @@ public class Rodada {
     private LocalDateTime data_fim;
     @Column(nullable = false)
     private Boolean rodada_aberta; //Equivale a status
+
+    @ManyToOne
+    @JoinColumn(name="id_time")
+    TimeFantasy timeFantasy;
 }

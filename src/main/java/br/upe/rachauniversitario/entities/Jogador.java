@@ -28,6 +28,4 @@ public class Jogador {
     @Column(nullable=false)
     @Enumerated(EnumType.STRING)
     private StatusJogador status;
-
-    
 }
