@@ -30,4 +30,5 @@ public class JogadorEscalacao {
     @ManyToOne
     @JoinColumn(name="id_escalacao")
     private Escalacao escalacao;
+
 }

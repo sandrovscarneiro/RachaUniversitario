@@ -27,5 +27,5 @@ public class Rodada {
 
     @ManyToOne
     @JoinColumn(name="id_time")
-    TimeFantasy timeFantasy;
+    private TimeFantasy timeFantasy;
 }

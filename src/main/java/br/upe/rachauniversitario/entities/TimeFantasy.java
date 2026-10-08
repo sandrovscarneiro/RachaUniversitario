@@ -29,7 +29,7 @@ public class TimeFantasy {
 
     @ManyToOne
     @JoinColumn(name="id_temporada")
-    Temporada temporada;
+    private Temporada temporada;
 
 
 }

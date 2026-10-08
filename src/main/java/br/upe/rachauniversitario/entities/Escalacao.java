@@ -24,5 +24,9 @@ public class Escalacao {
 
     @ManyToOne
     @JoinColumn(name="id_time")
-    TimeFantasy timeFantasy;
+    private TimeFantasy timeFantasy;
+
+    @ManyToOne
+    @JoinColumn(name="id_rodada")
+    private Rodada rodada;
 }
