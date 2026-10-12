@@ -16,7 +16,8 @@ import java.time.LocalDateTime;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_usuario;
+    @Column()
+    private Integer idUsuario;
     @Column(nullable = false)
     private String nome;
     @Column(nullable = false)
@@ -26,7 +27,7 @@ public class Usuario {
     @Column(nullable = false)
     private String senha;
     @Column(nullable = false)
-    private LocalDateTime data_cadastro;
+    private LocalDateTime dataCadastro;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Perfil perfil;

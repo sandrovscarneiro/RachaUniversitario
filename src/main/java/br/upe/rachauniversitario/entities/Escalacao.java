@@ -15,7 +15,7 @@ import lombok.Setter;
 public class Escalacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_escalacao;
+    private Integer idEscalacao;
     @Column(nullable = false)
     private Formacao formacao;
     private Float pontuacao;

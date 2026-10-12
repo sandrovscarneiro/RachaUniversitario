@@ -16,14 +16,14 @@ import java.time.LocalDateTime;
 public class Rodada {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_rodada;
+    private Integer idRodada;
     @Column(nullable = false)
     private Integer numero;
     @Column(nullable = false)
-    private LocalDateTime data_inicio;
-    private LocalDateTime data_fim;
+    private LocalDateTime dataInicio;
+    private LocalDateTime dataFim;
     @Column(nullable = false)
-    private Boolean rodada_aberta; //Equivale a status
+    private Boolean rodadaAberta; //Equivale a status
 
     @ManyToOne
     @JoinColumn(name="id_time")

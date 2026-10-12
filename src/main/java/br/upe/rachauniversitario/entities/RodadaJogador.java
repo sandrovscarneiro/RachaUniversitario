@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 public class RodadaJogador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_rodada_jogador;
+    private Integer idRodadaJogador;
     @Column(nullable = false)
     private Float pontos;
     @Column(nullable = false)

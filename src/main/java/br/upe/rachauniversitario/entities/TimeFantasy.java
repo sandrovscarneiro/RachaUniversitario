@@ -15,20 +15,20 @@ import java.math.BigDecimal;
 public class TimeFantasy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_time;
+    private Integer idTime;
     @Column(nullable = false)
     private String nome;
     @Column(nullable = false)
     private BigDecimal orcamento;
     @Column(nullable = false)
-    private Float pontuacao_total;
+    private Float pontuacaoTotal;
 
     @OneToOne
-    @JoinColumn(name="id_usuario", nullable = false)
+    @JoinColumn(name="idUsuario", nullable = false)
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name="id_temporada")
+    @JoinColumn(name="idTemporada")
     private Temporada temporada;
 
 

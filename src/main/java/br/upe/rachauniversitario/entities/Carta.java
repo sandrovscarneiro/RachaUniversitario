@@ -14,7 +14,7 @@ import lombok.Setter;
 public class Carta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_carta;
+    private Integer idCarta;
     @Column(nullable = false)
     private Integer overall;
     @Column(nullable = false)

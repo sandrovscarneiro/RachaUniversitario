@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Jogador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_jogador;
+    private Integer idJogador;
     @Column(nullable = false)
     private String nome;
     private Float altura;

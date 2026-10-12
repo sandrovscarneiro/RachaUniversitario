@@ -15,13 +15,13 @@ import lombok.Setter;
 public class JogadorEscalacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_jogador_escalacao;
+    private Integer idJogadorEscalacao;
     @Column(nullable = false)
-    private Posicao posicao_escalada;
+    private Posicao posicaoEscalada;
     @Column(nullable = false)
     private Integer slot;
     @Column(nullable = false)
-    private Float pontuacao_obtida;
+    private Float pontuacaoObtida;
 
     @ManyToOne
     @JoinColumn(name="id_jogador")

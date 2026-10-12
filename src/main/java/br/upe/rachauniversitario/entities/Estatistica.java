@@ -14,7 +14,7 @@ import lombok.Setter;
 public class Estatistica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_estatistica;
+    private Integer idEstatistica;
     @Column(nullable = false)
     private Integer gols;
     @Column(nullable = false)
@@ -22,9 +22,9 @@ public class Estatistica {
     @Column(nullable = false)
     private Integer defesas;
     @Column(nullable = false)
-    private Integer cartoes_amarelos;
+    private Integer cartoesAmarelos;
     @Column(nullable = false)
-    private Integer cartoes_vermelhos;
+    private Integer cartoesVermelhos;
 
     @OneToOne
     @JoinColumn(name="id_rodada_jogador", nullable = false)
