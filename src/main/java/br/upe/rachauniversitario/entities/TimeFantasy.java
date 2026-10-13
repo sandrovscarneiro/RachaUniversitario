@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.math.BigDecimal;
 @Entity
@@ -24,11 +26,12 @@ public class TimeFantasy {
     private Float pontuacaoTotal;
 
     @OneToOne
-    @JoinColumn(name="idUsuario", nullable = false)
+    @JoinColumn(name="id_usuario", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name="idTemporada")
+    @JoinColumn(name="id_temporada")
     private Temporada temporada;
 
 

@@ -27,6 +27,17 @@ public class JogadorServiceImpl implements JogadorService {
         cartaRepository.save(carta);
         return jogadorSalvo;
     }
+    @Override
+    public List<Jogador> criarJogadores(List<Jogador> jogadores){
+        List<Jogador> jogadoresSalvos = jogadorRepository.saveAll(jogadores);
+        for(Jogador jogadorSalvo:jogadoresSalvos){
+            Carta carta = new Carta();
+            carta.setAll(50);
+            carta.setJogador(jogadorSalvo);
+            cartaRepository.save(carta);
+        }
+        return jogadoresSalvos;
+    }
 
     @Override
     public Jogador buscarJogador(Integer idJogador){

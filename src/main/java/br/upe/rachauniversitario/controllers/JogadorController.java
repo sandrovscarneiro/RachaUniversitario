@@ -25,7 +25,10 @@ public class JogadorController {
     public Jogador criarJogador(@RequestBody Jogador jogador){
         return jogadorService.criarJogador(jogador);
     }
-
+    @PostMapping("/bulk")
+    public List<Jogador> criarJogadores(@RequestBody List<Jogador> jogadores){
+        return jogadorService.criarJogadores(jogadores);
+    }
     @DeleteMapping("/{id}")
     public void deletarJogador(@PathVariable Integer id){
         jogadorService.deletarJogador(id);

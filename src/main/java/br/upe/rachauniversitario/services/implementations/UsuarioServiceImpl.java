@@ -33,7 +33,12 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public List<Usuario> buscarTodosUsuarios(){
+    public Usuario buscarUsuario(Integer id){
+        return usuarioRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Usuario> buscarUsuarios(){
         return usuarioRepository.findAll();
     }
 

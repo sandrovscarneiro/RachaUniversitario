@@ -19,14 +19,18 @@ public class UsuarioController{
         return usuarioService.cadastrarUsuario(usuario);
     }
 
-    @GetMapping("/{email}")
+    @GetMapping("/{id}")
+    public Usuario buscarUsuario(@PathVariable Integer id){
+        return usuarioService.buscarUsuario(id);
+    }
+    @GetMapping("/email/{email}")
     public Usuario buscarUsuarioEmail(@PathVariable String email){
-        return null;
+        return usuarioService.buscarUsuarioEmail(email);
     }
 
     @GetMapping
-    public List<Usuario> BuscarTodosUsuarios(){
-        return List.of();
+    public List<Usuario> BuscarUsuarios(){
+        return usuarioService.buscarUsuarios();
     }
 
 
