@@ -19,8 +19,8 @@ public class Temporada {
     @Column(nullable = false)
     private String nome;
     @Column(nullable = false)
-    private LocalDateTime data_inicio;
-    private LocalDateTime data_fim;
+    private LocalDateTime dataInicio;
+    private LocalDateTime dataFim;
     @Column(nullable = false)
-    private Boolean temporada_aberta; //equivale ao status
+    private Boolean temporadaAberta; //equivale ao status
 }

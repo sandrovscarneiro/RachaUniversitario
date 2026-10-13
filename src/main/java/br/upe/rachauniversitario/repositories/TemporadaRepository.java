@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TemporadaRepository extends JpaRepository<Temporada, Integer> {
+    public Temporada findFirstByTemporadaAbertaTrue();
 }

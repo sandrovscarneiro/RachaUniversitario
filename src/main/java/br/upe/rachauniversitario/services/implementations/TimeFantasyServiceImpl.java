@@ -1,6 +1,7 @@
 package br.upe.rachauniversitario.services.implementations;
 
 import br.upe.rachauniversitario.entities.TimeFantasy;
+import br.upe.rachauniversitario.repositories.TemporadaRepository;
 import br.upe.rachauniversitario.repositories.TimeFantasyRepository;
 import br.upe.rachauniversitario.repositories.UsuarioRepository;
 import br.upe.rachauniversitario.services.TimeFantasyService;
@@ -16,6 +17,7 @@ import java.util.List;
 public class TimeFantasyServiceImpl implements TimeFantasyService {
     private final TimeFantasyRepository timeFantasyRepository;
     private final UsuarioRepository usuarioRepository;
+    private final TemporadaRepository temporadaRepository;
     @Override
     @Transactional
     public TimeFantasy criarTime(String nome, Integer idUsuario){
@@ -24,6 +26,7 @@ public class TimeFantasyServiceImpl implements TimeFantasyService {
         time.setOrcamento(BigDecimal.valueOf(75));
         time.setPontuacaoTotal((float) 0);
         time.setUsuario(usuarioRepository.findById(idUsuario).orElseThrow());
+        time.setTemporada(temporadaRepository.findFirstByTemporadaAbertaTrue());
         return timeFantasyRepository.save(time);
     }
     @Override
