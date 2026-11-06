@@ -1,8 +1,11 @@
 package br.upe.rachauniversitario.controllers;
 
+import br.upe.rachauniversitario.DTOs.TemporadaDTOs.TemporadaResponseDTO;
 import br.upe.rachauniversitario.entities.Temporada;
 import br.upe.rachauniversitario.services.TemporadaService;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.Response;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,11 +16,15 @@ import java.util.List;
 public class TemporadaController {
     private final TemporadaService temporadaService;
     @GetMapping
-    public List<Temporada> buscarTemporadas(){
-        return temporadaService.buscarTemporadas();
+    public ResponseEntity<List<TemporadaResponseDTO>> buscarTemporadas(){
+        return ResponseEntity.ok(temporadaService.buscarTemporadas());
+    }
+    @GetMapping("/atual")
+    public ResponseEntity<TemporadaResponseDTO> buscarTemporadaAtual(){
+        return ResponseEntity.ok(temporadaService.buscarTemporadaAtual());
     }
     @PostMapping
-    public Temporada criarTemporada(@RequestBody Temporada temporada){
-        return temporadaService.criarTemporada(temporada);
+    public ResponseEntity<TemporadaResponseDTO> criarTemporada(@RequestBody String nome){
+        return ResponseEntity.ok(temporadaService.criarTemporada(nome));
     }
 }

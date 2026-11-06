@@ -17,6 +17,10 @@ public class TimeFantasyController {
     public List<TimeFantasy> buscarTimes(){
         return timeFantasyService.buscarTimes();
     }
+    @GetMapping("/ranking")
+    public List<TimeFantasy> criarRanking(){
+        return timeFantasyService.criarRanking();
+    }
     @GetMapping("/{id}")
     public TimeFantasy buscarTime(@PathVariable Integer id){
         return timeFantasyService.buscarTime(id);

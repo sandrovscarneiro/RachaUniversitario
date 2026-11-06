@@ -26,8 +26,12 @@ public class TimeFantasyServiceImpl implements TimeFantasyService {
         time.setOrcamento(BigDecimal.valueOf(75));
         time.setPontuacaoTotal((float) 0);
         time.setUsuario(usuarioRepository.findById(idUsuario).orElseThrow());
-        time.setTemporada(temporadaRepository.findFirstByTemporadaAbertaTrue());
+        time.setTemporada(temporadaRepository.findByTemporadaAberta(true));
         return timeFantasyRepository.save(time);
+    }
+    @Override
+    public List<TimeFantasy> criarRanking(){
+        return timeFantasyRepository.findByTemporada_TemporadaAbertaTrueOrderByPontuacaoTotalDesc();
     }
     @Override
     public TimeFantasy buscarTime(Integer idTime){

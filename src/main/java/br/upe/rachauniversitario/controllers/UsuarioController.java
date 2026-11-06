@@ -1,7 +1,9 @@
 package br.upe.rachauniversitario.controllers;
+import br.upe.rachauniversitario.DTOs.UsuarioDTOS.UsuarioResponseDTO;
 import br.upe.rachauniversitario.entities.Usuario;
 import br.upe.rachauniversitario.services.UsuarioService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,25 +14,18 @@ import java.util.List;
 public class UsuarioController{
     private final UsuarioService usuarioService;
 
-    @PostMapping
-    public Usuario cadastrarUsuario(@RequestBody Usuario usuario){
-        System.out.println(usuario.getNome());
-        System.out.println(usuario.getEmail());
-        return usuarioService.cadastrarUsuario(usuario);
-    }
-
     @GetMapping("/{id}")
-    public Usuario buscarUsuario(@PathVariable Integer id){
-        return usuarioService.buscarUsuario(id);
+    public ResponseEntity<UsuarioResponseDTO> buscarUsuario(@PathVariable Integer id){
+        return ResponseEntity.ok(usuarioService.buscarUsuario(id));
     }
     @GetMapping("/email/{email}")
-    public Usuario buscarUsuarioEmail(@PathVariable String email){
-        return usuarioService.buscarUsuarioEmail(email);
+    public ResponseEntity<UsuarioResponseDTO> buscarUsuarioEmail(@PathVariable String email){
+        return ResponseEntity.ok(usuarioService.buscarUsuarioEmail(email));
     }
 
     @GetMapping
-    public List<Usuario> BuscarUsuarios(){
-        return usuarioService.buscarUsuarios();
+    public ResponseEntity<List<UsuarioResponseDTO>> BuscarUsuarios(){
+        return ResponseEntity.ok(usuarioService.buscarUsuarios());
     }
 
 

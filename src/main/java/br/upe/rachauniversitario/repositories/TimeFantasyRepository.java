@@ -4,6 +4,9 @@ import br.upe.rachauniversitario.entities.TimeFantasy;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface TimeFantasyRepository extends JpaRepository<TimeFantasy, Integer> {
+    public List<TimeFantasy> findByTemporada_TemporadaAbertaTrueOrderByPontuacaoTotalDesc();
 }
