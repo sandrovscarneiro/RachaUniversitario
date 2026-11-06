@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EscalacaoRepository extends JpaRepository<Escalacao, Integer> {
+    public Escalacao findByRodada_RodadaAbertaTrue();
 }

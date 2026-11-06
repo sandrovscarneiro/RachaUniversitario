@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,4 +31,7 @@ public class Jogador {
     @Column(nullable=false)
     @Enumerated(EnumType.STRING)
     private StatusJogador status;
+
+    @ManyToMany(mappedBy = "jogadores")
+    private List<Escalacao> escalacoes = new ArrayList<>();
 }

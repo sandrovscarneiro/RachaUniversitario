@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface TimeFantasyRepository extends JpaRepository<TimeFantasy, Integer> {
     public List<TimeFantasy> findByTemporada_TemporadaAbertaTrueOrderByPontuacaoTotalDesc();
+    public boolean existsByUsuarioIdUsuario(Integer idUsuario);
 }

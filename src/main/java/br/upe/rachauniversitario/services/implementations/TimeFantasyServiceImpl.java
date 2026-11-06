@@ -7,7 +7,9 @@ import br.upe.rachauniversitario.repositories.UsuarioRepository;
 import br.upe.rachauniversitario.services.TimeFantasyService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -21,13 +23,19 @@ public class TimeFantasyServiceImpl implements TimeFantasyService {
     @Override
     @Transactional
     public TimeFantasy criarTime(String nome, Integer idUsuario){
-        TimeFantasy time = new TimeFantasy();
-        time.setNome(nome);
-        time.setOrcamento(BigDecimal.valueOf(75));
-        time.setPontuacaoTotal((float) 0);
-        time.setUsuario(usuarioRepository.findById(idUsuario).orElseThrow());
-        time.setTemporada(temporadaRepository.findByTemporadaAberta(true));
-        return timeFantasyRepository.save(time);
+        if(!timeFantasyRepository.existsByUsuarioIdUsuario(idUsuario)){
+            TimeFantasy time = new TimeFantasy();
+            time.setNome(nome);
+            time.setOrcamento(BigDecimal.valueOf(75));
+            time.setPontuacaoTotal((float) 0);
+            time.setUsuario(usuarioRepository.findById(idUsuario).orElseThrow());
+            time.setTemporada(temporadaRepository.findByTemporadaAberta(true));
+            return timeFantasyRepository.save(time);
+        }
+        throw new ResponseStatusException(
+                HttpStatus.CONFLICT, "Usuário já possui um time cadastrado."
+        );
+
     }
     @Override
     public List<TimeFantasy> criarRanking(){

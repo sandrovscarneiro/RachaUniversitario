@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,4 +32,12 @@ public class Escalacao {
     @ManyToOne
     @JoinColumn(name="id_rodada")
     private Rodada rodada;
+
+    @ManyToMany
+    @JoinTable(
+            name = "escalacao_jogador",
+            joinColumns = @JoinColumn(name = "id_escalacao"),
+            inverseJoinColumns = @JoinColumn(name = "id_jogador")
+    )
+    private List<Jogador> jogadores = new ArrayList<>();
 }

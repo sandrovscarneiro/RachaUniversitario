@@ -26,6 +26,12 @@ public class UsuarioServiceImpl implements UsuarioService {
                     "O e-mail informado já está cadastrado no sistema."
             );
         }
+        if(dto.senha().length() < 8){
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "Sua senha não pode ter menos de 8 caracteres."
+            );
+        }
 
         Usuario usuario = dto.toEntity();
         usuarioRepository.save(usuario);
